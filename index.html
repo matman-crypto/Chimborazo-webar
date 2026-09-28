@@ -17,6 +17,12 @@
   <!-- MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
+  <!-- Font Awesome para iconos de redes sociales -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
   <style>
 
     /* =================================
@@ -179,7 +185,7 @@
 
 
     /* =================================
-       MENSAJE AL ENCONTRAR LA TARJETA
+       CONTENEDOR FINAL
     ================================= */
 
     #found-message {
@@ -205,7 +211,7 @@
 
 
     /* =================================
-       TEXTO "CONOCE MÁS EN"
+       "CONOCE MÁS EN"
     ================================= */
 
     .more-text {
@@ -214,7 +220,7 @@
       color: #FFFFFF;
 
       font-size: 15px;
-      font-weight: 500;
+      font-weight: 700;
 
       text-align: center;
 
@@ -234,16 +240,15 @@
 
       min-width: 190px;
 
-      padding: 13px 24px;
+      padding: 13px 26px;
 
       box-sizing: border-box;
 
-      border-radius: 12px;
+      /* Más redondeado */
+      border-radius: 30px;
 
-      /* Amarillo de marca */
       background: #FFC72C;
 
-      /* Texto blanco */
       color: #FFFFFF;
 
       font-size: 16px;
@@ -257,11 +262,66 @@
 
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
 
-      transition: transform 0.15s ease;
+      transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
     }
 
     #travel-button:active {
       transform: scale(0.96);
+    }
+
+
+    /* =================================
+       REDES SOCIALES
+    ================================= */
+
+    #social-buttons {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      margin-top: 10px;
+    }
+
+
+    /* BOTONES CIRCULARES */
+
+    .social-button {
+      width: 36px;
+      height: 36px;
+
+      border-radius: 50%;
+
+      background: #FFFFFF;
+
+      color: #000000;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+
+      font-size: 17px;
+
+      box-sizing: border-box;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+
+      -webkit-tap-highlight-color: transparent;
+
+      transition:
+        transform 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .social-button:active {
+      transform: scale(0.90);
     }
 
 
@@ -324,6 +384,17 @@
         padding: 15px 25px;
       }
 
+      #travel-button {
+        min-width: 180px;
+        padding: 12px 24px;
+      }
+
+      .social-button {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+      }
+
     }
 
 
@@ -384,9 +455,14 @@
 
   <div id="found-message">
 
+    <!-- TEXTO -->
+
     <div class="more-text">
       Conoce más en
     </div>
+
+
+    <!-- BOTÓN PRINCIPAL -->
 
     <a
       id="travel-button"
@@ -396,6 +472,68 @@
     >
       ecuador.travel
     </a>
+
+
+    <!-- =================================
+         REDES SOCIALES
+    ================================== -->
+
+    <div id="social-buttons">
+
+
+      <!-- INSTAGRAM -->
+
+      <a
+        class="social-button"
+        href="https://www.instagram.com/ecuadortravel/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+
+      <!-- TIKTOK -->
+
+      <a
+        class="social-button"
+        href="https://www.tiktok.com/@ecuadortravel"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="TikTok"
+      >
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+
+      <!-- FACEBOOK -->
+
+      <a
+        class="social-button"
+        href="https://www.facebook.com/EcuadorTravel"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+      >
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+
+
+      <!-- YOUTUBE -->
+
+      <a
+        class="social-button"
+        href="https://www.youtube.com/@EcuadorTravel"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+      >
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+
+    </div>
 
   </div>
 
@@ -738,7 +876,7 @@
         );
 
 
-        /* Mostrar mensaje y botón */
+        /* Mostrar mensaje y botones */
 
         foundMessage.style.display = "flex";
 
