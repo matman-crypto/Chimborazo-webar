@@ -333,7 +333,7 @@
 
     /* =================================
        REDES SOCIALES
-    ================================= */
+    ================================== */
 
     #social-buttons {
 
@@ -352,7 +352,7 @@
     /* =================================
        BOTONES SOCIALES
        AMARILLOS + ICONOS BLANCOS
-    ================================= */
+    ================================== */
 
     .social-button {
 
@@ -443,7 +443,6 @@
 
     @media (max-width: 380px) {
 
-
       #marca-pais-logo {
 
         width: 115px;
@@ -495,7 +494,6 @@
 
 
     @media (min-height: 800px) {
-
 
       #marca-pais-logo {
 
@@ -601,9 +599,7 @@
     <div id="social-buttons">
 
 
-      <!-- =================================
-           INSTAGRAM
-      ================================== -->
+      <!-- INSTAGRAM -->
 
       <a
         class="social-button"
@@ -612,15 +608,11 @@
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
-
         <i class="fa-brands fa-instagram"></i>
-
       </a>
 
 
-      <!-- =================================
-           TIKTOK
-      ================================== -->
+      <!-- TIKTOK -->
 
       <a
         class="social-button"
@@ -629,15 +621,11 @@
         rel="noopener noreferrer"
         aria-label="TikTok"
       >
-
         <i class="fa-brands fa-tiktok"></i>
-
       </a>
 
 
-      <!-- =================================
-           FACEBOOK
-      ================================== -->
+      <!-- FACEBOOK -->
 
       <a
         class="social-button"
@@ -646,15 +634,11 @@
         rel="noopener noreferrer"
         aria-label="Facebook"
       >
-
         <i class="fa-brands fa-facebook-f"></i>
-
       </a>
 
 
-      <!-- =================================
-           YOUTUBE
-      ================================== -->
+      <!-- YOUTUBE -->
 
       <a
         class="social-button"
@@ -663,9 +647,7 @@
         rel="noopener noreferrer"
         aria-label="YouTube"
       >
-
         <i class="fa-brands fa-youtube"></i>
-
       </a>
 
 
@@ -712,6 +694,7 @@
 
     <!-- =================================
          VIDEO
+         CON AUDIO
     ================================== -->
 
     <a-assets>
@@ -724,8 +707,6 @@
         preload="auto"
 
         loop
-
-        muted
 
         playsinline
 
@@ -839,9 +820,12 @@
 
     /* =================================
        CONFIGURACIÓN DEL VIDEO
+       CON AUDIO
     ================================== */
 
-    video.muted = true;
+    video.muted = false;
+
+    video.volume = 1.0;
 
     video.loop = true;
 
@@ -867,12 +851,18 @@
 
         startButton.style.display = "none";
 
-
         loading.style.display = "block";
-
 
         errorMessage.style.display = "none";
 
+
+        /* =================================
+           HABILITAR AUDIO
+        ================================== */
+
+        video.muted = false;
+
+        video.volume = 1.0;
 
 
         try {
@@ -894,11 +884,9 @@
           }
 
 
-
           console.log(
             "Solicitando permiso de cámara..."
           );
-
 
 
           /* ------------------------------
@@ -923,11 +911,9 @@
             });
 
 
-
           console.log(
             "Permiso de cámara concedido"
           );
-
 
 
           /* ------------------------------
@@ -943,7 +929,6 @@
             });
 
 
-
           /* ------------------------------
              OBTENER SISTEMA MINDAR
           ------------------------------ */
@@ -952,7 +937,6 @@
             scene.systems[
               "mindar-image-system"
             ];
-
 
 
           if (!mindarSystem) {
@@ -964,11 +948,9 @@
           }
 
 
-
           console.log(
             "Iniciando MindAR..."
           );
-
 
 
           /* ------------------------------
@@ -978,11 +960,9 @@
           await mindarSystem.start();
 
 
-
           console.log(
             "MindAR iniciado correctamente"
           );
-
 
 
           /* ------------------------------
@@ -1008,9 +988,7 @@
 
           loading.style.display = "none";
 
-
           startButton.style.display = "block";
-
 
           errorMessage.style.display = "block";
 
@@ -1061,19 +1039,33 @@
 
 
         /* ------------------------------
-           REPRODUCIR VIDEO
+           ASEGURAR AUDIO
+        ------------------------------ */
+
+        video.muted = false;
+
+        video.volume = 1.0;
+
+
+        /* ------------------------------
+           REPRODUCIR VIDEO CON AUDIO
         ------------------------------ */
 
         video
           .play()
-          .catch(function(error) {
-
+          .then(function() {
 
             console.log(
-              "El navegador bloqueó la reproducción automática:",
-              error
+              "Video reproduciéndose con audio"
             );
 
+          })
+          .catch(function(error) {
+
+            console.log(
+              "El navegador bloqueó la reproducción con audio:",
+              error
+            );
 
           });
 
