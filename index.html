@@ -11,17 +11,30 @@
 
   <title>Descubre el Chimborazo</title>
 
-  <!-- A-Frame -->
+
+  <!-- =================================
+       A-FRAME
+  ================================== -->
+
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
-  <!-- MindAR -->
+
+  <!-- =================================
+       MINDAR
+  ================================== -->
+
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 
-  <!-- Font Awesome para iconos de redes sociales -->
+
+  <!-- =================================
+       FONT AWESOME
+  ================================== -->
+
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
+
 
   <style>
 
@@ -33,11 +46,18 @@
     body {
       margin: 0;
       padding: 0;
+
       width: 100%;
       height: 100%;
+
       overflow: hidden;
+
       background: transparent;
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
     }
 
 
@@ -46,21 +66,29 @@
     ================================= */
 
     #start-screen {
+
       position: fixed;
+
       inset: 0;
+
       z-index: 9999;
 
       display: flex;
+
       flex-direction: column;
+
       justify-content: center;
+
       align-items: center;
 
       padding: 30px;
+
       box-sizing: border-box;
 
       text-align: center;
 
       background: #FFC72C;
+
       color: #000000;
     }
 
@@ -70,11 +98,15 @@
     ================================= */
 
     #marca-pais-logo {
+
       width: 130px;
+
       max-width: 45vw;
+
       height: auto;
 
       object-fit: contain;
+
       display: block;
 
       margin: 0 auto 28px auto;
@@ -86,10 +118,13 @@
     ================================= */
 
     #start-screen h1 {
+
       margin: 0 0 15px 0;
 
       font-size: 30px;
+
       font-weight: 700;
+
       line-height: 1.15;
 
       color: #000000;
@@ -103,12 +138,15 @@
     ================================= */
 
     #start-screen p {
+
       width: 100%;
+
       max-width: 400px;
 
       margin: 0 auto 30px auto;
 
       font-size: 17px;
+
       line-height: 1.5;
 
       color: #000000;
@@ -122,15 +160,19 @@
     ================================= */
 
     #start-button {
+
       border: none;
+
       border-radius: 12px;
 
       padding: 16px 30px;
 
       background: #FFFFFF;
+
       color: #000000;
 
       font-size: 18px;
+
       font-weight: bold;
 
       cursor: pointer;
@@ -140,7 +182,9 @@
       box-shadow: none;
     }
 
+
     #start-button:active {
+
       transform: scale(0.97);
     }
 
@@ -150,6 +194,7 @@
     ================================= */
 
     #loading {
+
       display: none;
 
       margin-top: 20px;
@@ -165,6 +210,7 @@
     ================================= */
 
     #error-message {
+
       display: none;
 
       margin-top: 20px;
@@ -180,6 +226,7 @@
       color: #000000;
 
       font-size: 14px;
+
       line-height: 1.4;
     }
 
@@ -189,6 +236,7 @@
     ================================= */
 
     #found-message {
+
       display: none;
 
       position: fixed;
@@ -196,12 +244,15 @@
       z-index: 5000;
 
       left: 50%;
+
       bottom: 30px;
 
       transform: translateX(-50%);
 
       flex-direction: column;
+
       align-items: center;
+
       justify-content: center;
 
       text-align: center;
@@ -215,16 +266,19 @@
     ================================= */
 
     .more-text {
+
       margin-bottom: 4px;
 
       color: #FFFFFF;
 
       font-size: 15px;
+
       font-weight: 700;
 
       text-align: center;
 
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+      text-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
 
@@ -233,9 +287,11 @@
     ================================= */
 
     #travel-button {
+
       display: inline-flex;
 
       align-items: center;
+
       justify-content: center;
 
       min-width: 190px;
@@ -244,7 +300,6 @@
 
       box-sizing: border-box;
 
-      /* Más redondeado */
       border-radius: 30px;
 
       background: #FFC72C;
@@ -252,6 +307,7 @@
       color: #FFFFFF;
 
       font-size: 16px;
+
       font-weight: 700;
 
       text-decoration: none;
@@ -260,14 +316,17 @@
 
       -webkit-tap-highlight-color: transparent;
 
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+      box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.25);
 
       transition:
         transform 0.15s ease,
         box-shadow 0.15s ease;
     }
 
+
     #travel-button:active {
+
       transform: scale(0.96);
     }
 
@@ -277,9 +336,11 @@
     ================================= */
 
     #social-buttons {
+
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       gap: 9px;
@@ -288,21 +349,27 @@
     }
 
 
-    /* BOTONES CIRCULARES */
+    /* =================================
+       BOTONES SOCIALES
+       AMARILLOS + ICONOS BLANCOS
+    ================================= */
 
     .social-button {
+
       width: 36px;
+
       height: 36px;
 
       border-radius: 50%;
 
-      background: #FFFFFF;
+      background: #FFC72C;
 
-      color: #000000;
+      color: #FFFFFF;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       text-decoration: none;
@@ -311,7 +378,8 @@
 
       box-sizing: border-box;
 
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.22);
 
       -webkit-tap-highlight-color: transparent;
 
@@ -320,7 +388,9 @@
         background 0.15s ease;
     }
 
+
     .social-button:active {
+
       transform: scale(0.90);
     }
 
@@ -330,29 +400,37 @@
     ================================= */
 
     .a-enter-vr {
+
       display: none !important;
     }
 
+
     a-scene {
+
       background: transparent !important;
     }
 
+
     canvas {
+
       background: transparent !important;
     }
 
 
     /* =================================
-       VIDEO
+       VIDEO DE CÁMARA
     ================================= */
 
     video[autoplay] {
+
       position: fixed !important;
 
       top: 0 !important;
+
       left: 0 !important;
 
       width: 100% !important;
+
       height: 100% !important;
 
       object-fit: cover !important;
@@ -365,33 +443,51 @@
 
     @media (max-width: 380px) {
 
+
       #marca-pais-logo {
+
         width: 115px;
+
         margin-bottom: 24px;
       }
 
+
       #start-screen h1 {
+
         font-size: 27px;
       }
 
+
       #start-screen p {
+
         font-size: 16px;
+
         max-width: 330px;
       }
 
+
       #start-button {
+
         font-size: 17px;
+
         padding: 15px 25px;
       }
 
+
       #travel-button {
+
         min-width: 180px;
+
         padding: 12px 24px;
       }
 
+
       .social-button {
+
         width: 34px;
+
         height: 34px;
+
         font-size: 16px;
       }
 
@@ -400,7 +496,9 @@
 
     @media (min-height: 800px) {
 
+
       #marca-pais-logo {
+
         margin-bottom: 28px;
       }
 
@@ -420,28 +518,46 @@
 
   <div id="start-screen">
 
+
+    <!-- LOGO -->
+
     <img
       id="marca-pais-logo"
       src="./logo-marca-pais.png"
       alt="Ecuador, brilla auténticamente"
     >
 
+
+    <!-- TÍTULO -->
+
     <h1>
       Descubre el Chimborazo
     </h1>
+
+
+    <!-- DESCRIPCIÓN -->
 
     <p>
       Apunta la cámara hacia la tarjeta del Chimborazo
       para descubrir la experiencia.
     </p>
 
+
+    <!-- BOTÓN -->
+
     <button id="start-button">
       ACTIVAR CÁMARA
     </button>
 
+
+    <!-- CARGANDO -->
+
     <div id="loading">
       Activando cámara...
     </div>
+
+
+    <!-- ERROR -->
 
     <div id="error-message"></div>
 
@@ -450,10 +566,12 @@
 
 
   <!-- =================================
-       MENSAJE CUANDO ENCUENTRA LA TARJETA
+       MENSAJE CUANDO ENCUENTRA
+       LA TARJETA
   ================================== -->
 
   <div id="found-message">
+
 
     <!-- TEXTO -->
 
@@ -462,7 +580,9 @@
     </div>
 
 
-    <!-- BOTÓN PRINCIPAL -->
+    <!-- =================================
+         BOTÓN ECUADOR.TRAVEL
+    ================================== -->
 
     <a
       id="travel-button"
@@ -481,7 +601,9 @@
     <div id="social-buttons">
 
 
-      <!-- INSTAGRAM -->
+      <!-- =================================
+           INSTAGRAM
+      ================================== -->
 
       <a
         class="social-button"
@@ -490,24 +612,32 @@
         rel="noopener noreferrer"
         aria-label="Instagram"
       >
+
         <i class="fa-brands fa-instagram"></i>
+
       </a>
 
 
-      <!-- TIKTOK -->
+      <!-- =================================
+           TIKTOK
+      ================================== -->
 
       <a
         class="social-button"
-        href="https://www.tiktok.com/@ecuadortravel"
+        href="https://www.tiktok.com/@ecuador.travel?_r=1&_t=ZS-9A7D999HWzP"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="TikTok"
       >
+
         <i class="fa-brands fa-tiktok"></i>
+
       </a>
 
 
-      <!-- FACEBOOK -->
+      <!-- =================================
+           FACEBOOK
+      ================================== -->
 
       <a
         class="social-button"
@@ -516,20 +646,26 @@
         rel="noopener noreferrer"
         aria-label="Facebook"
       >
+
         <i class="fa-brands fa-facebook-f"></i>
+
       </a>
 
 
-      <!-- YOUTUBE -->
+      <!-- =================================
+           YOUTUBE
+      ================================== -->
 
       <a
         class="social-button"
-        href="https://www.youtube.com/@EcuadorTravel"
+        href="https://www.youtube.com/@EcuadorTravelOfficial"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="YouTube"
       >
+
         <i class="fa-brands fa-youtube"></i>
+
       </a>
 
 
@@ -544,6 +680,7 @@
   ================================== -->
 
   <a-scene
+
     id="ar-scene"
 
     mindar-image="
@@ -606,11 +743,15 @@
     ================================== -->
 
     <a-entity
+
       id="target"
+
       mindar-image-target="targetIndex: 0"
     >
 
+
       <a-video
+
         id="ar-video"
 
         src="#chimborazo-video"
@@ -629,6 +770,7 @@
         "
       ></a-video>
 
+
     </a-entity>
 
 
@@ -638,6 +780,7 @@
     ================================== -->
 
     <a-camera
+
       position="0 0 0"
 
       look-controls="enabled: false"
@@ -656,30 +799,38 @@
 
   <script>
 
+
     /* =================================
        ELEMENTOS
-    ================================= */
+    ================================== */
 
     const startScreen =
       document.getElementById("start-screen");
 
+
     const startButton =
       document.getElementById("start-button");
+
 
     const loading =
       document.getElementById("loading");
 
+
     const errorMessage =
       document.getElementById("error-message");
+
 
     const foundMessage =
       document.getElementById("found-message");
 
+
     const scene =
       document.getElementById("ar-scene");
 
+
     const target =
       document.getElementById("target");
+
 
     const video =
       document.getElementById("chimborazo-video");
@@ -688,7 +839,7 @@
 
     /* =================================
        CONFIGURACIÓN DEL VIDEO
-    ================================= */
+    ================================== */
 
     video.muted = true;
 
@@ -702,24 +853,30 @@
 
     /* =================================
        BOTÓN ACTIVAR CÁMARA
-    ================================= */
+    ================================== */
 
     startButton.addEventListener(
       "click",
       async function () {
 
+
         console.log(
           "Botón ACTIVAR CÁMARA presionado"
         );
 
+
         startButton.style.display = "none";
 
+
         loading.style.display = "block";
+
 
         errorMessage.style.display = "none";
 
 
+
         try {
+
 
           /* ------------------------------
              VERIFICAR SOPORTE DE CÁMARA
@@ -737,9 +894,11 @@
           }
 
 
+
           console.log(
             "Solicitando permiso de cámara..."
           );
+
 
 
           /* ------------------------------
@@ -752,7 +911,9 @@
               video: {
 
                 facingMode: {
+
                   ideal: "environment"
+
                 }
 
               },
@@ -762,9 +923,11 @@
             });
 
 
+
           console.log(
             "Permiso de cámara concedido"
           );
+
 
 
           /* ------------------------------
@@ -780,6 +943,7 @@
             });
 
 
+
           /* ------------------------------
              OBTENER SISTEMA MINDAR
           ------------------------------ */
@@ -788,6 +952,7 @@
             scene.systems[
               "mindar-image-system"
             ];
+
 
 
           if (!mindarSystem) {
@@ -799,9 +964,11 @@
           }
 
 
+
           console.log(
             "Iniciando MindAR..."
           );
+
 
 
           /* ------------------------------
@@ -811,9 +978,11 @@
           await mindarSystem.start();
 
 
+
           console.log(
             "MindAR iniciado correctamente"
           );
+
 
 
           /* ------------------------------
@@ -825,7 +994,11 @@
           loading.style.display = "none";
 
 
-        } catch (error) {
+        }
+
+
+        catch (error) {
+
 
           console.error(
             "ERROR DE CÁMARA:",
@@ -835,7 +1008,9 @@
 
           loading.style.display = "none";
 
+
           startButton.style.display = "block";
+
 
           errorMessage.style.display = "block";
 
@@ -859,107 +1034,129 @@
         }
 
       }
+
     );
 
 
 
     /* =================================
        TARJETA ENCONTRADA
-    ================================= */
+    ================================== */
 
     target.addEventListener(
       "targetFound",
       function () {
+
 
         console.log(
           "TARGET CHIMBORAZO ENCONTRADO"
         );
 
 
-        /* Mostrar mensaje y botones */
+        /* ------------------------------
+           MOSTRAR MENSAJE
+        ------------------------------ */
 
         foundMessage.style.display = "flex";
 
 
-        /* Reproducir video */
+        /* ------------------------------
+           REPRODUCIR VIDEO
+        ------------------------------ */
 
         video
           .play()
           .catch(function(error) {
+
 
             console.log(
               "El navegador bloqueó la reproducción automática:",
               error
             );
 
+
           });
 
       }
+
     );
 
 
 
     /* =================================
        TARJETA PERDIDA
-    ================================= */
+    ================================== */
 
     target.addEventListener(
       "targetLost",
       function () {
+
 
         console.log(
           "TARGET CHIMBORAZO PERDIDO"
         );
 
 
-        /* Ocultar mensaje */
+        /* ------------------------------
+           OCULTAR MENSAJE
+        ------------------------------ */
 
         foundMessage.style.display = "none";
 
 
-        /* Pausar video */
+        /* ------------------------------
+           PAUSAR VIDEO
+        ------------------------------ */
 
         video.pause();
 
       }
+
     );
 
 
 
     /* =================================
        A-FRAME CARGADO
-    ================================= */
+    ================================== */
 
     scene.addEventListener(
       "loaded",
       function () {
 
+
         console.log(
           "A-Frame cargado"
         );
 
+
       }
+
     );
 
 
 
     /* =================================
        MANEJO DE ERRORES
-    ================================= */
+    ================================== */
 
     window.addEventListener(
       "error",
       function(event) {
+
 
         console.error(
           "Error general:",
           event.error || event.message
         );
 
+
       }
+
     );
 
   </script>
+
 
 </body>
 
